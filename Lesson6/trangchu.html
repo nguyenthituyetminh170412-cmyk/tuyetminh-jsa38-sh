@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Buổi 6 </title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #141414; color: white; margin: 0; padding-bottom: 50px; }
+        
+        nav { padding: 20px 40px; background: #000; display: flex; justify-content: space-between; }
+        nav h1 { color: #e50914; margin: 0; font-size: 28px; }
+
+        .row-title { margin: 30px 40px 10px; font-size: 22px; color: #e5e5e5; }
+
+        /* THANH KÉO */
+        .movie-slider {
+            display: flex; 
+            overflow-x: auto; 
+            gap: 15px;
+            padding: 10px 40px;
+            scroll-behavior: smooth; 
+        }
+
+    
+        .movie-slider::-webkit-scrollbar { height: 8px; }
+        .movie-slider::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+        .movie-slider::-webkit-scrollbar-track { background: transparent; }
+
+        .movie-item {
+            flex: 0 0 200px; 
+            transition: transform 0.3s;
+        }
+
+        .movie-item:hover { transform: scale(1.05); cursor: pointer; }
+
+        .movie-item img {
+            width: 100%;
+            height: 300px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .movie-item p { text-align: center; margin-top: 8px; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <h1>CINEMA</h1>
+    </nav>
+
+
+    <h2 class="row-title">Phim </h2>
+    <div class="movie-slider">
+        <div class="movie-item"><img src="./img/Bố Già.png"><p>Bố già</p></div>
+        <div class="movie-item"><img src="./img/Cục vàng của ngoại.jpg"><p>Cục vàng của ngoại</p></div>
+        <div class="movie-item"><img src="./img/Cua lại vợ bầu.jpg"><p>Cua lại vợ bầu</p></div>
+        <div class="movie-item"><img src="./img/Hai Muối.jpg"><p>Hai Muối</p></div>
+        <div class="movie-item"><img src="./img/Gặp_lại_chị_bầu_2024_poster.jpg"><p>Gặp lại chị bầu</p></div>
+        <div class="movie-item"><img src="./img/Khe_uoc_ban_dau.jpg"><p>Khế ước bán dâu</p></div>
+        <div class="movie-item"><img src="./img/tham tu kien.jfif"><p>Thám tử kiên</p></div>
+    </div>
+
+
+    <h2 class="row-title">Phim </h2>
+    <div class="movie-slider">
+        <div class="movie-item"><img src="./img/Làm giàu với ma.jpg"><p>Làm Giàu với ma</p></div>
+        <div class="movie-item"><img src="./img/Thế hệ kỳ tích.jpg"><p>Thế hệ kỳ tích</p></div>
+        <div class="movie-item"><img src="./img/Truy tìm long diên hương.jpg"><p>Truy tìm long diên hương</p></div>
+        <div class="movie-item"><img src="./img/Tu_chien_tren_khong.jpg"><p>Tử chiến trên không</p></div>
+        <div class="movie-item"><img src="./img/Chí Phèo ngoại truyện.jpg"><p>Chí phèo ngoại truyện</p></div>
+        <div class="movie-item"><img src="./img/Zootopia 2.jpg"><p>Zootopia 2</p></div>
+        <div class="movie-item"><img src="./img/20022024-daophovapiano-1.jpg"><p>Đào, phở và piano</p></div>
+    </div>
+
+</body>
+</html>

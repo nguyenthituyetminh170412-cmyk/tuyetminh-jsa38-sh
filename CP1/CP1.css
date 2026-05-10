@@ -1,0 +1,13 @@
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 210px); 
+    gap: 18px;
+}
+.card {
+    width: 210px;
+    height: 210px;
+    background-color: yellow;
+    cursor: pointer;
+    
+}
