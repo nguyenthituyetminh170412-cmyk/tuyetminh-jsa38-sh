@@ -1,0 +1,513 @@
+.navbar { /* Navbar cố định giữa màn hình, hiệu ứng*/
+  position: fixed;
+  top: 20px;
+  left: 50%; /* sang trái 50%*/
+  transform: translateX(-50%); /* kéo ngược lại 50% */
+  width: 85%;
+  padding: 14px 30px;
+
+  display: flex;
+  justify-content: space-between;  /* Đẩy các item ra hai bên */
+  align-items: center;
+
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);  /* làm mờ background phía sau navbar */
+  border-radius: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Đổ bóng */
+  z-index: 1000;  /* nằm trên các phần tử khác */
+}
+.logo  {
+  font-size: 25px;
+  font-weight: 600;
+  color: #4a3a2f;
+  text-decoration: none; /* bỏ gạch chân logo */
+}
+nav a { 
+  margin-left: 20px;
+  text-decoration: none;    /* bỏ gạch chân */
+  color: #4a3a2f;
+  font-size: 20px;
+  position: relative;
+}
+nav a::after { /* hover khi đưa chuột vô thì hiện gạch chân */
+  content: ""; /*  gạch chân*/
+  position: absolute;
+  width: 0; /* gạch chân chx hiện */
+  height: 2px; /* độ dày gạch chân*/
+  background: #4a3a2f;
+  left: 0; /* gạch chân hiện từ mép trái */
+  bottom: -4px; /* nằm thấp hơn chữ */
+  transition: 0.3s; /* hover */
+}
+nav a:hover::after { 
+  width: 100%; /* khi di chuột vào thì gạch chân hiện bằng với chiều ngang chư */ 
+}
+.banner {
+  height: 85vh;  /* chiều cao banner chiếm 85% màn hình */
+  display: flex;
+  flex-direction: column; /* sắp xep theo cột */
+  justify-content: center;   /* can giữa nội dung theo chiều doc */
+  padding-left: 10%; /*  đẩy nội dung lệch bên phải 10%*/
+  background-color: #fafafa;
+}
+.banner h1 {
+  font-size: 64px;
+  margin: 0;
+  color: #222;
+}
+.banner p {
+  margin-top: 12px; /* tạo khoảng cách với phía trên */
+  font-size: 20px;
+  color: #666;
+  letter-spacing: 0.5px; /* giãn khoảng cách chữ */
+}
+.about-me {    
+  min-height: 100vh; /* Chiều cao tối thiểu bằng chiều cao màn hình */
+  display: flex;    /* căn noi dung ở giữa theo chiều dọc */
+  align-items: center;
+  padding: 50px; /* khoang cach ben trong section */ 
+  padding-top: 50px; /* khoang cach phia tren */ 
+  background-color: #fdfbf7;   
+}
+.about-text {
+  flex: 1; /* chiem phần không gian còn lại trong flex container*/
+}
+
+.about-text h1 {
+  color: #4a3a2f;
+  font-size: 50px;
+  margin-bottom: 30px; /* tao khoang cach vơi phần tử dưới */ 
+}
+
+.quote {
+  font-size: 30px;       
+  margin-bottom: 30px;
+  color: #444;
+  transition: color 0.3s; /* hover thay đổi màu chữ mượt */
+}
+
+.about-text:hover .quote {
+  color: #000; 
+}
+
+.desc {
+  font-size: 22px;
+  line-height: 1.8; /* giãn khoảng cách dòng */
+}
+
+.about-image img {
+  width: 600px;            
+  border-radius: 24px;
+  transform: rotate(6deg) scale(1); /* nghiêng*/
+  transition: transform 0.4s, box-shadow 0.4s; /* nghiêng ok */
+}
+
+.about-image img:hover {
+  transform: rotate(0deg) scale(1.15);  /* thẳng, ảnh to hơn*/
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15); /* đổ bóng, làm nổi lên  */
+}
+
+.about-image { /* đẩy hình sang trái */
+  margin-left: -120px; 
+}
+
+.name {
+  display: block;   /* chiếm trọn dòng */
+  font-weight: 700;   
+}
+
+.logo a {
+  font-size: 25px;
+  font-weight: 600;
+  color: #4a3a2f;
+  text-decoration: none; /* bỏ gạch chân */
+}
+
+.love-section {
+  min-height: 100vh; /* Chiều cao tối thiểu bằng chiều cao màn hình */
+  padding: 140px 8%;  /* khoang cach trên–dưới 140px, trái–phải 8% */
+  background: linear-gradient(180deg, #faf7f2, #fdfbf7); /* nền chuyển màu dọc, nhẹ va mịn */
+}
+
+/* Tiêu đề */
+.love-section h2 {
+  font-size: 64px;
+  font-weight: 700;
+  color: #4a3a2f;
+  margin-bottom: 14px;
+  letter-spacing: -1px;     /* kéo chữ sát lại nhau*/
+}
+
+/* Quote đầu section */
+.love-quote {
+  font-style: italic;      /* chữ nghiêng */
+  font-size: 23px;
+  color: #444;
+  margin-bottom: 70px;
+  max-width: 700px;
+}
+
+/* Grid card */
+.love-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));  /* cột co giãn theo màn hình */
+  gap: 36px; /* khoang cach giữa các cột */
+}
+
+/* Card */
+.love-item {
+  background: rgba(255,255,255,0.9);
+  padding: 34px 28px;
+  border-radius: 26px;
+  font-size: 18px;
+  line-height: 1.7; /* giãn dòng */ 
+  color: #333;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.06),  /* đổ bóng ngoài*/
+    inset 0 0 0 1px rgba(255,255,255,0.6);  /* viền sáng */
+
+  transition: all 0.35s ease; /* hover mượt */
+}
+
+/* Emoji + tiêu đề trong card */
+.love-item strong {
+  display: block;
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: #4a3a2f;
+}
+
+/* Hover hiệu ứng */
+.love-item:hover {
+  transform: translateY(-10px); /* kéo phần tử lên */
+  box-shadow:
+    0 20px 45px rgba(0,0,0,0.12), /* đổ bóng bên ngoài đậm */
+    inset 0 0 0 1px rgba(255,255,255,0.8); /* viền sáng bên trong */
+}
+
+/* Text quote trong card */
+.love-item em {
+  display: block;
+  margin-top: 12px; /* khoảng cách trên */
+  font-style: italic; /* chữ nghiêng */
+  color: #666;
+}
+
+.love-board {
+  display: flex;              /* căn giữa ảnh */
+  justify-content: center;
+  margin-bottom: 80px;        /* khoảng cách dưới */
+}
+
+.love-board img {
+  width: 100%;
+  max-width: 900px;    
+  border-radius: 10px;      
+  box-shadow:                
+    0 25px 60px rgba(0,0,0,0.15), /* đổ bóng */
+    inset 0 0 0 6px #ecd6bf;  /* viền ngoài */
+
+  transition: 0.4s ease;    /* chuyển động mượt */ 
+}
+
+.love-board img:hover {
+  transform: scale(1.08);     /* phóng to */
+}
+
+/* tiêu đề */
+.proud-section h2 {
+  font-size: 64px;
+  color: #4a3a2f;
+  margin-bottom: 14px;
+}
+
+.achievements {
+  padding: 120px 0;    /*  khoảng cách trên–dưới 120px, trái–phải 0 */       
+  background: #faf7f2;      
+}
+
+.ach-title {
+  font-size: 56px;           
+  margin-left: 10%;      /* cách lề trái*/    
+}
+
+.ach-sub {
+  margin-left: 10%;          /* cách lề trái*/    
+  font-style: italic;       /* chữ nghiêng */
+  opacity: 0.7;          /* mờ */    
+  margin-bottom: 40px;       
+}
+
+.track {
+  display: flex;             /* xếp theo hàng ngang */
+  gap: 40px;                 /* khoảng cách giữa các card */
+  padding: 20px 10%;         /* chừa lề hai bên */
+  overflow-x: auto;          /* kéo ngang */
+  scroll-snap-type: x mandatory; /* mỗi lần kéo sẽ dừng đúng 1 card */
+}
+
+.card {
+  min-width: 300px;          
+  background: #fff;         
+  padding: 28px;             
+  border-radius: 20px;       /* bo góc */
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12); 
+  scroll-snap-align: start;  /* card đúng vị trí khi kéo */
+  transition: 0.35s ease;    /* hover */
+}
+
+/* card so le */
+.card:nth-child(odd) {
+  margin-top: 30px;         
+}
+
+.card:hover {
+  transform: translateY(-10px); /* hover nổi lên */
+}
+
+.icon {
+  font-size: 32px;          
+}
+
+.card h3 {
+  margin: 16px 0 8px;       /* cách trên 16px, trái–phải 0, dưới 8px */ 
+}
+
+.card p {
+  font-size: 16px;           
+  opacity: 0.8;   /* mờ */          
+}
+
+.time {
+  font-size: 14px;           
+  opacity: 0.6;              /* mờ */
+}
+
+.track {
+  padding-bottom: 40px;        /* cho thanh trượt xuống dưới */
+}
+
+/*  chiều cao thanh trượt*/
+.track::-webkit-scrollbar { /* tùy chỉnh thanh cuộn */
+  height: 6px;                 
+}
+
+/* nền thanh trượt */
+.track::-webkit-scrollbar-track { 
+  background: #f1ede7;         
+  border-radius: 10px;
+}
+
+/* cục kéo lên*/
+.track::-webkit-scrollbar-thumb {
+  background: #cbb9a7;         
+  border-radius: 10px;
+}
+
+/* hover khi di chuột vào thì cục kéo lên */
+.track::-webkit-scrollbar-thumb:hover {
+  background: #b49f8a;
+}
+
+.future-section {
+  min-height: 100vh;
+  padding: 140px 10%;
+  background: #fdfbf7;       
+}
+
+.future-section h2 {
+  font-size: 64px;            
+  color: #4a3a2f;
+  margin-bottom: 16px;
+}
+
+.future-quote {
+  font-style: italic;
+  font-size: 22px;
+  max-width: 700px;
+  margin-bottom: 70px;
+  opacity: 0.8;
+}
+
+/* danh sách card */
+.future-list {
+  display: grid; /* xếp card gọn lại*/
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* tự chia cột theo màn hình */
+  gap: 40px;
+}
+
+/* card tương lai */
+.future-card {
+  background: #fff;
+  padding: 36px 30px;
+  border-radius: 22px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08); /* nổi lên*/
+
+  transition: 0.35s ease;
+}
+
+/* icon */
+.future-icon {
+  font-size: 38px;
+  display: block;
+  margin-bottom: 14px;
+}
+
+/* hover */
+.future-card:hover {
+  transform: translateY(-8px); /* hover nổi lên */
+}
+
+
+.favorites-hero {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 0 10%;
+  background: linear-gradient(180deg,#faf7f2,#fdfbf7);
+}
+
+.favorites-hero h1 {
+  font-size: 72px;
+  color: #4a3a2f;
+  margin-bottom: 16px;
+}
+
+.favorites-hero p {
+  font-size: 22px;
+  color: #666;
+  font-style: italic;
+}
+
+.favorites-section {
+  padding: 100px 10%;
+  background: #fdfbf7;
+}
+
+.favorites-title {
+  font-size: 48px;
+  color: #4a3a2f;
+  margin-bottom: 30px;
+}
+
+.favorites-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 32px;
+
+  margin-bottom: 100px;
+}
+
+/* card riêng cho API */
+
+.fav-card {
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.08);
+
+  transition: all 0.35s ease;
+}
+
+.fav-card:hover {
+  transform: translateY(-10px);
+  box-shadow:
+    0 20px 45px rgba(0,0,0,0.12);
+}
+
+.fav-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+.fav-card h3 {
+  padding: 15px 18px 2px;
+  color: #4a3a2f;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.fav-card p {
+  padding: 0 18px 12px;
+  text-align: center;
+  color: #777;
+  font-size: 15px;
+
+}
+
+.fav-card {
+  cursor: pointer;
+}
+
+.feedback-section {
+  min-height: 100vh;
+  padding: 140px 10%;
+  background: #fdfbf7;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.feedback-section h1 {
+  font-size: 64px;
+  color: #4a3a2f;
+  margin-bottom: 15px;
+}
+
+.feedback-section p {
+  font-size: 20px;
+  color: #666;
+  margin-bottom: 50px;
+  text-align: center;
+  max-width: 700px;
+}
+
+#feedbackForm {
+  width: 100%;
+  max-width: 700px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#feedbackForm input,
+#feedbackForm textarea {
+  padding: 18px;
+  border: none;
+  border-radius: 18px;
+
+  background: white;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.06);
+
+  font-size: 16px;
+}
+
+#feedbackForm button {
+  padding: 18px;
+
+  border: none;
+  border-radius: 18px;
+
+  background: #4a3a2f;
+  color: white;
+
+  font-size: 18px;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+#feedbackForm button:hover {
+  transform: translateY(-3px);
+}

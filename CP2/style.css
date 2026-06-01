@@ -1,0 +1,14 @@
+body{
+    background: linear-gradient(to right, #44ACFF, #44ACFF);
+    font-family: Arial, sans-serif;
+}
+
+.weather-card{
+    background: white;
+    border-radius: 20px;
+    width: 400px;
+}
+
+#weatherResult{
+    font-size: 18px;
+}
