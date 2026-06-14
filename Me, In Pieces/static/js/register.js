@@ -11,7 +11,7 @@ form.addEventListener("submit", (e) => {
 
   const exist = users.find(u => u.email === email);
   if (exist) {
-    alert("Email đã tồn tại rồi!");
+    alert("Email already exists!");
     return;
   }
 
@@ -19,6 +19,6 @@ form.addEventListener("submit", (e) => {
 
   localStorage.setItem("users", JSON.stringify(users));
 
-  alert("Đăng ký thành công ");
+  alert("Sign up successfully!");
   window.location.href = "login.html";
 });

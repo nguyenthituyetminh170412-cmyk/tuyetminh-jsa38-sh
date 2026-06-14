@@ -13,12 +13,12 @@ form.addEventListener("submit", (e) => {
   );
 
   if (!user) {
-    alert("Sai email hoặc password");
+    alert("Incorrect email or password");
     return;
   }
 
   localStorage.setItem("currentUser", JSON.stringify(user));
 
-  alert("Login thành công");
+  alert("Sign in successfully!");
   window.location.href = "index.html";
 });
